@@ -1,4 +1,4 @@
-package geeksforgeeks;
+package geeksforgeeks.school;
 
 import java.util.ArrayList;
 
