@@ -1,23 +1,33 @@
 package strings;
 
 public class ReverseSentence {
-
 	public static void main(String[] args) {
-		
-		String sen = "I love     java, the coffe";
-		
-		String[] words = sen.split(" ");
-		int n = words.length;
-		for(int i=0; i< n/2; i++) {
-			String temp = words[i];
-			words[i] = words[n-1-i];
-			words[n-1-i] = temp;
-		}
 
-		for(String w: words) {
-			System.err.print(w + " ");
-		}
-		
+		ReverseSentence obj = new ReverseSentence();
+		String s = "  hello world  ";
+		String str = obj.reverseWords(s);
+		System.err.println(str);
 	}
 
+	public String reverseWords(String s) {
+        
+		int i = s.length() - 1;
+		String str = "";
+		
+		while(i>=0) {
+			while(i>=0 && s.charAt(i) == ' ') i--;
+			int j = i;
+			System.err.println(i);
+			if(i<0) break;
+			
+			while(i>=0 && s.charAt(i) != ' ') i--;
+			if(str.isEmpty()) {
+				str = str.concat(s.substring(i+1, j+1));
+			} else {
+				str = str.concat(" " + s.substring(i+1, j+1));
+			}
+		}
+		
+		return str;
+    }
 }
