@@ -15,6 +15,7 @@ public class MainClass {
 		Teacher.demo();
 		
 		Person p = t;
+		p.walk();
 		Singer s = (Singer)p;
 //		p.name = "changed";
 	}
