@@ -29,7 +29,7 @@ class Animal {
 		System.err.println("animal is eating");
 	}
 	void show() {
-		System.err.println("afdsadf");
+		System.err.println("show method in animal");
 	}
 }
 
@@ -43,6 +43,7 @@ class Deer extends Animal {
 }
 
 class Fawn extends Deer {
+	@Override
 	void eat() {
 		System.err.println("eating on mother's feed");
 	}

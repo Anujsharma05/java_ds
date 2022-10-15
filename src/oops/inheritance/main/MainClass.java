@@ -16,8 +16,9 @@ public class MainClass {
 		
 		Person p = t;
 		p.walk();
-		Singer s = (Singer)p;
+//		Singer s = (Singer)p;
 //		p.name = "changed";
+
 	}
 
 }

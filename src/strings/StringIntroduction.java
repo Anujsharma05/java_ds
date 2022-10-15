@@ -1,7 +1,7 @@
 package strings;
 
 public class StringIntroduction {
-
+	static String name;
 	public static void main(String[] args) {
 
 	String a = "Anuj";
@@ -10,8 +10,15 @@ public class StringIntroduction {
 	String d = "Anuj";
 	
 	String c = d.substring(0,4);
-	System.err.println(d == c);
-		
-	}
+//	System.err.println(d == c);
 
+	System.out.println(name);
+
+	char ch = 'H';
+	System.out.println((char)90);
+
+		char abc = '2';
+		int i = (int)(abc);
+		System.out.println(i);
+	}
 }

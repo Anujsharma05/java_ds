@@ -6,11 +6,16 @@ abstract class Shape {
 	{
 		System.err.println("initialization block");
 	}
+
 	Shape(double l, double h) {
 		length = l;
 		height = h;
 	}
-	
+
+	static void greeting() {
+		System.out.println("Hi from Shape");
+	}
+
 	abstract double area();
 }
 
@@ -19,7 +24,8 @@ class Rectangle extends Shape {
 	Rectangle(double l, double h) {
 		super(l,h);
 	}
-	
+
+	@Override
 	double area() {
 		return length * height;
 	}
@@ -39,7 +45,8 @@ class Triangle extends Shape {
 public class AbstractArea {
 
 	public static void main(String[] args) {
-		
+
+		Shape.greeting();
 		Shape s = new Rectangle(5, 6);
 		System.err.println(s.area());
 		s = new Triangle(5,6);

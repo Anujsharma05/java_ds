@@ -2,30 +2,37 @@ package introduction;
 
 public class Practice {
 
+	private class Hello {
+		int a;
+		int b;
+	}
+	
 	public static void main(String[] args) {
-		int[] arr = { 1, 2, 3, 4, 5, 6, 7};
-		int n = arr.length;
 		
-		for(int i=0; i<n; i++) {
-			int minIndex = i;
-			boolean sorted = true;
-			for(int j=i+1; j<n; j++) {
-				if(arr[minIndex] > arr[j]) {
-					minIndex = j;
-					sorted=false;
-				}
-			}
-			
-			if(!sorted) {
-				int temp = arr[i];
-				arr[i] = arr[minIndex];
-				arr[minIndex] = temp;
-			}
-		}
+		Practice obj = new Practice();
+		obj.testMethod();
 		
-		for(int i: arr) {
-			System.err.print(i + " ");
+//		won't work because no object of parnent is created
+//		Hello o = new Hello();
+		
+		{
+			int c = 12;
 		}
+		int c = 44;
+	}
+
+	private void testMethod() {
+		Hello obj = new Hello();
+		obj.a = 12;
+		obj.b = 11;
+		System.out.println(obj.hashCode());
+		changeName(obj);
+	}
+
+	private static void changeName(Hello obj) {
+		System.out.println(obj.hashCode());
+		obj.a = 33;
+		obj.b  = 54;
 	}
 
 }
