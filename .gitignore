@@ -1,3 +1,8 @@
 /bin/
 .project
 .classpath
+.idea
+.settings/
+src/.idea
+src/java_ds.iml
+src/out

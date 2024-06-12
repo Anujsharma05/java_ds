@@ -1,5 +1,7 @@
 package multithreading;
 
+import java.util.Comparator;
+
 class MyThread extends Thread {
 
     @Override

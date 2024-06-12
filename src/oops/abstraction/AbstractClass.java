@@ -6,39 +6,45 @@ class Highest {
 	}
 }
 
-abstract class Base extends Highest{
+abstract class Base extends Highest {
 
 	int marks;
 
 	static String name;
 
-	public Base(int marks) {
+	Base(int marks) {
 		this.marks = marks;
 		name = "Anuj";
 	}
 
 //	abstract void show();
-	
+
 	void display() {
 		System.err.println("non abstract methods");
 	}
 }
 
 abstract class Derived extends Base {
-	public Derived(int marks) {
+	Derived(int marks) {
 		super(marks);
+		System.out.println("parent constructor");
 	}
 }
 
-class DerivedFromDerived extends Derived{
+class DerivedFromDerived extends Derived {
+	{
+		System.out.println("child instance initialization block");
+	}
 
 	public DerivedFromDerived(int marks) {
 		super(marks);
+		System.out.println("constructor of child");
 	}
 
 	void show() {
 		System.err.println("derived from derived show");
 	}
+
 	void paint() {
 		System.err.println("painting the wall");
 	}
@@ -47,7 +53,7 @@ class DerivedFromDerived extends Derived{
 public class AbstractClass {
 
 	public static void main(String[] args) {
-		
+
 		Base obj = new DerivedFromDerived(4);
 		System.out.println(Base.name);
 		obj.marks = 3;

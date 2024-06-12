@@ -2,11 +2,17 @@ package introduction;
 
 public class Singleton {
 
-    String name;
+	private static Singleton obj = null;
 
-    private Singleton() {}
+	private Singleton() {
+	}
 
-    public Singleton(String name) {
-        this.name = name;
-    }
+	public static Singleton getInstance() {
+
+		if (obj == null) {
+			obj = new Singleton();
+		}
+
+		return obj;
+	}
 }

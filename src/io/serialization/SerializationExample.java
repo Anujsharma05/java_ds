@@ -11,15 +11,10 @@ public class SerializationExample {
 	 */
 	public static void main(String[] args) {
 
-		FileOutputStream fos = null;
-		ObjectOutputStream oos = null;
-		
-		try {
-			fos = new FileOutputStream("D:/example/Emp.ser");
-			oos = new ObjectOutputStream(fos);
-			
+		try (FileOutputStream fos = new FileOutputStream("D:/example/Emp.ser");
+				ObjectOutputStream oos = new ObjectOutputStream(fos);) {
 			Employee emp = new Employee(1, "Tanjiro", 1200.0, 33);
-			
+
 			oos.writeObject(emp);
 		} catch (IOException e) {
 			e.printStackTrace();

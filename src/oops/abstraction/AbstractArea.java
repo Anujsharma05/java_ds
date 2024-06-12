@@ -2,7 +2,7 @@ package oops.abstraction;
 
 abstract class Shape {
 	double length, height;
-	
+
 	{
 		System.err.println("initialization block");
 	}
@@ -20,9 +20,9 @@ abstract class Shape {
 }
 
 class Rectangle extends Shape {
-	
+
 	Rectangle(double l, double h) {
-		super(l,h);
+		super(l, h);
 	}
 
 	@Override
@@ -32,11 +32,12 @@ class Rectangle extends Shape {
 }
 
 class Triangle extends Shape {
-	
+
 	Triangle(double l, double h) {
-		super(l,h);
+		super(l, h);
 	}
-	
+
+	@Override
 	double area() {
 		return 0.5 * length * height;
 	}
@@ -49,7 +50,7 @@ public class AbstractArea {
 		Shape.greeting();
 		Shape s = new Rectangle(5, 6);
 		System.err.println(s.area());
-		s = new Triangle(5,6);
+		s = new Triangle(5, 6);
 		System.err.println(s.area());
 	}
 
