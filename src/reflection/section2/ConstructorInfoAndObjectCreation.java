@@ -12,14 +12,14 @@ import java.util.stream.Collectors;
  */
 public class ConstructorInfoAndObjectCreation {
     public static void main(String[] args) throws InvocationTargetException, InstantiationException, IllegalAccessException {
-//        printConstructorData(Person.class);
+        printConstructorData(Person.class);
 
-        Person person1 = createInstanceWithArguments(Person.class);
-        System.out.println(person1);
-
-        Address address = createInstanceWithArguments(Address.class, "Grand line", 60);
-        Person person2 = createInstanceWithArguments(Person.class,  "Zoro" , 28, address);
-        System.out.println(person2);
+//        Person person1 = createInstanceWithArguments(Person.class);
+//        System.out.println(person1);
+//
+//        Address address = createInstanceWithArguments(Address.class, "Grand line", 60);
+//        Person person2 = createInstanceWithArguments(Person.class,  "Zoro" , 28, address);
+//        System.out.println(person2);
 
     }
 
