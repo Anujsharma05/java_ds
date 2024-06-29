@@ -6,6 +6,7 @@ public class ServerConfiguration {
     private final InetSocketAddress serverAddress;
     private final String greetingMessage;
     private static ServerConfiguration serverConfigurationInstance;
+
     private ServerConfiguration(int port, String greetingMessage) {
         this.greetingMessage = greetingMessage;
         this.serverAddress = new InetSocketAddress("localhost", port);

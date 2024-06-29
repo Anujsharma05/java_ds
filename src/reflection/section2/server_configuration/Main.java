@@ -12,6 +12,10 @@ public class Main {
         webServer.startServer();
     }
     public static void initConfiguration() throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+
+        /**
+         * Find specific constructor based on the arguments
+         */
         Constructor<ServerConfiguration> constructor = ServerConfiguration.class.getDeclaredConstructor(int.class, String.class);
 
         /**
