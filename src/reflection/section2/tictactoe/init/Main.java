@@ -1,19 +1,10 @@
-
-
 package reflection.section2.tictactoe.init;
 
 import reflection.section2.tictactoe.game.Game;
-//import reflection.section2.tictactoe.game.internal.TicTacToeGame;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Tic Tac Toe
- * https://www.udemy.com/course/java-reflection-master-class
- */
 
 public class Main {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException, InvocationTargetException, ClassNotFoundException {
@@ -41,6 +32,10 @@ public class Main {
 
         return (T) constructor.newInstance(constructorArguments.toArray());
     }
+
+    /**
+     * Assuming that there is only one constructor
+     */
     private static Constructor<?> getFirstConstructor(Class<?> clazz) {
         Constructor<?>[] constructors = clazz.getDeclaredConstructors();
 

@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -18,6 +19,9 @@ public class AnnotationDiscovery {
         Set<Method> methods = ad.getAllAnnotatedMethods(sc);
 
         for(Method method: methods) {
+//            if(Modifier.isPrivate(method.getModifiers())) {
+//                method.setAccessible(true);
+//            }
             method.invoke(sc);
         }
     }
@@ -27,7 +31,7 @@ public class AnnotationDiscovery {
             System.out.println("method 1");
         }
         @OpenResources
-        public void someMethod2() {
+        private void someMethod2() {
             System.out.println("Method 2");
         }
         public void someMethod3() {

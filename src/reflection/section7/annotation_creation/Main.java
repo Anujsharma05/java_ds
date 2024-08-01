@@ -24,7 +24,7 @@ public class Main {
         initialize();
     }
 
-    private static void initialize(String ...packageNames) throws Throwable {
+    private static void initialize() throws Throwable {
 
         ScanPackages scanPackages = Main.class.getAnnotation(ScanPackages.class);
 

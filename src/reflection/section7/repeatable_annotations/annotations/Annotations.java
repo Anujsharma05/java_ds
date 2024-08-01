@@ -20,6 +20,11 @@ public class Annotations {
 
   }
 
+  /**
+   * No need to mention runtime here as it is
+   * mentioned on annotation "ExecutionSchedules"
+   * But @Target must be added to both of them
+   */
   @Repeatable(ExecutionSchedules.class)
   @Target(ElementType.METHOD)
   public @interface ExecuteOnSchedule {

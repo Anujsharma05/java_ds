@@ -45,6 +45,9 @@ public class LambdaCollection {
 		elist.add(tanjiro);
 		elist.add(zenitsu);
 		elist.add(inosuke);
+		/**
+		 * This will use comparable implementation of the given object class
+		 */
 		Collections.sort(elist);
 		System.out.println(elist);
 //		Collections.sort(elist, (o1, o2) -> o1.ename.compareTo(o2.ename));

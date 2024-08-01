@@ -19,7 +19,8 @@ public class UnaryOperatorExample {
 	
 	static void unaryOperatorEx() {
 		UnaryOperator<Integer> u = i -> i * i;
-		System.out.println(u.apply(10));
+		Integer output = u.apply(10);
+		System.out.println(output);
 	}
 
 	//Int, Long, Double

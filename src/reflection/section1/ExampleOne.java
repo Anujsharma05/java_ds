@@ -24,6 +24,11 @@ public class ExampleOne {
 
     public static void main(String[] args) throws ClassNotFoundException {
         Class<String> stringClass = String.class;
+        Class<Integer> i = int.class;
+        Class<Boolean> b = boolean.class;
+
+        System.out.println(i.isPrimitive());
+        System.out.println(b.isPrimitive());
 
         Map<String, Integer> map = new HashMap<>();
         Class<?> mapClass = map.getClass();

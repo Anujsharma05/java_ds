@@ -13,7 +13,10 @@ class MyRunnable implements Runnable {
 
 public class ThreadDemo {
 	public static void main(String args[]) {
-		
+
+		/**
+		 * Pre java 8 way to get runnable instance
+		 */
 //		Runnable r = new MyRunnable();
 		
 		Runnable r = () -> {

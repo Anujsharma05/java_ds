@@ -9,7 +9,8 @@ public class BufferedReaderExample {
 
 	public static void main(String[] args) {
 
-		try (FileReader fr = new FileReader("D:/example/my_data.txt"); BufferedReader br = new BufferedReader(fr);) {
+		try (FileReader fr = new FileReader("D:/example/my_data.txt");
+				BufferedReader br = new BufferedReader(fr);) {
 
 			String line;
 			int count = 0;

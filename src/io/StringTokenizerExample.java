@@ -12,7 +12,7 @@ public class StringTokenizerExample {
 		StringTokenizer st1 = new StringTokenizer(s, ",", false);
 
 		while (st1.hasMoreTokens()) {
-			System.out.println(st1.nextToken());
+			System.out.println(st1.nextToken().trim());
 		}
 	}
 

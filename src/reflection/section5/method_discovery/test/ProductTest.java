@@ -1,7 +1,6 @@
 package reflection.section5.method_discovery.test;
 
 import reflection.section5.method_discovery.api.ClothingProduct;
-import reflection.section5.method_discovery.api.Product;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

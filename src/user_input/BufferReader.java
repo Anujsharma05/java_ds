@@ -7,7 +7,10 @@ import java.io.InputStreamReader;
 public class BufferReader {
 
 	public static void main(String[] args) {
-		
+
+		/**
+		 * System.in specifies keyboard input
+		 */
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		try {
 			String name = in.readLine();

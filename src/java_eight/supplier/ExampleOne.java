@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
-/*	
+/**
  * Supplier<R>
  * R get()
  * 

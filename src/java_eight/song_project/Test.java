@@ -14,27 +14,14 @@ public class Test {
 
 		List<Song> songs = Songs.getSongs();
 
-//		findAllRockSongs(songs);
-//		beatlesSongAfter1995StartingWithH(songs);
-//		listAllGenres(songs);
-//		notOriginalArtist(songs);
-//		sortSongs(songs);
-//		getArtistsCommaSeparated(songs);
-//		genreExistOrNot(songs);
-//		findFirstOccurrence(songs);
-
-//		testCase(songs);
-
-	}
-
-	private static void testCase(List<Song> songs) {
-		String s = songs.stream().map(Song::getArtist).distinct().collect(Collectors.joining(","));
-		Stream s1 = songs.stream().map(Song::getArtist);
-		Stream s2 = s1.distinct();
-
-		System.out.println(s2.count());
-//		System.out.println(s1.count());
-
+		findAllRockSongs(songs);
+		beatlesSongAfter1995StartingWithH(songs);
+		listAllGenres(songs);
+		notOriginalArtist(songs);
+		sortSongs(songs);
+		getArtistsCommaSeparated(songs);
+		genreExistOrNot(songs);
+		findFirstOccurrence(songs);
 	}
 
 	private static void findFirstOccurrence(List<Song> songs) {
@@ -64,9 +51,10 @@ public class Test {
 
 	private static void notOriginalArtist(List<Song> songs) {
 		String songTitle = "With a Little Help from My Friends";
+		String originalArtist = "Beatles";
 
 		List<String> artists = songs.stream().filter(song -> song.getTitle().equals(songTitle)).map(Song::getArtist)
-				.filter(artist -> !artist.contains("Beatles")).collect(Collectors.toList());
+				.filter(artist -> !artist.contains(originalArtist)).collect(Collectors.toList());
 		System.out.println(artists);
 
 	}
@@ -94,8 +82,10 @@ public class Test {
 
 	static void beatlesSongAfter1995StartingWithH(List<Song> songs) {
 
-		List<Song> list = songs.stream().filter(song -> song.getArtist().contains("Beatles"))
-				.filter(song -> song.getTitle().startsWith("H")).filter(song -> song.getYear() > 1995)
+		List<Song> list = songs.stream()
+				.filter(song -> song.getArtist().contains("Beatles"))
+				.filter(song -> song.getTitle().startsWith("H"))
+				.filter(song -> song.getYear() > 1995)
 				.collect(Collectors.toList());
 
 		list.forEach(System.out::println);

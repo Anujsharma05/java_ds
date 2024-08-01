@@ -1,12 +1,8 @@
-/**
- * 
- */
 package java_eight.lambda_expression;
 
 /**
- * @author anuj.sharma
- *
- * @date 08-Jun-2022
+ * Lambda Expression is an instance of the class
+ * that implements a functional interface
  */
 
 @FunctionalInterface

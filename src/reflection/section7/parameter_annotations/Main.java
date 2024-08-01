@@ -46,8 +46,8 @@ public class Main {
   private static void withAnnotations()
       throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
 
-//    bestGameFinder();
-    sqlQueryBuilder();
+    bestGameFinder();
+//    sqlQueryBuilder();
   }
 
   private static void bestGameFinder()

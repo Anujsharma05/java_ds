@@ -20,6 +20,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import reflection.section7.annotation_creation.annotations.ScanPackages;
+import reflection.section7.repeatable_annotations.loaders.Cache;
 
 import static reflection.section7.repeatable_annotations.annotations.Annotations.*;
 
@@ -28,7 +29,20 @@ public class Main {
 
   public static void main(String[] args)
       throws URISyntaxException, IOException, ClassNotFoundException {
-    schedule();
+    testCode();
+//    schedule();
+  }
+
+  private static void testCode() {
+    Class<Cache> c = Cache.class;
+    try {
+      Method method = c.getMethod("reloadCache");
+//      ExecuteOnSchedule ann = method.getAnnotation(ExecuteOnSchedule.class);
+      ExecuteOnSchedule[] anns = method.getAnnotationsByType(ExecuteOnSchedule.class);
+      System.out.println(anns.length);
+    } catch (NoSuchMethodException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   private static void schedule() throws URISyntaxException, IOException, ClassNotFoundException {

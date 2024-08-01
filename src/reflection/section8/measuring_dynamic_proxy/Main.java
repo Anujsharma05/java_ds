@@ -14,10 +14,10 @@ public class Main {
 
   public static void main(String[] args) throws InterruptedException, IOException {
     HttpClient httpClient = createProxy(new HttpClientImpl());
-//    useHttpClient(httpClient);
+    useHttpClient(httpClient);
 
-    DatabaseReader dbReader = createProxy(new DatabaseReaderImpl());
-    useDatabaseReader(dbReader);
+//    DatabaseReader dbReader = createProxy(new DatabaseReaderImpl());
+//    useDatabaseReader(dbReader);
   }
 
   public static void useHttpClient(HttpClient httpClient) {
@@ -44,6 +44,11 @@ public class Main {
     System.out.println(String.format("Received %s", String.join(" , ", data)));
   }
 
+  /**
+   * Proxy.newProxyInstance creates proxy class that implements provided interfaces
+   * The proxy class dispatches all method invocations to the provided handler
+   * Also, Creates an instance of proxy class and return it
+   */
   public static <T> T createProxy(Object originalObject) {
       Class<?>[] interfaces = originalObject.getClass().getInterfaces();
 
@@ -60,6 +65,10 @@ public class Main {
       this.originalObject = originalObject;
     }
 
+    /**
+     * This proxy handler method is called when a method is invoked through the proxy object
+     * Here we can provide implementation on how to execute the method
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
       Object result;

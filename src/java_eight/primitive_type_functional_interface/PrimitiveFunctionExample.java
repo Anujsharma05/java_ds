@@ -1,5 +1,6 @@
 package java_eight.primitive_type_functional_interface;
 
+import java.util.function.DoubleFunction;
 import java.util.function.IntFunction;
 import java.util.function.IntToDoubleFunction;
 import java.util.function.ToIntFunction;
@@ -20,9 +21,7 @@ public class PrimitiveFunctionExample {
 	private static void intFunctionEx() {
 
 		IntFunction<Integer> getSquare = i -> i * i;
-
 		System.out.println(getSquare.apply(4));
-
 	}
 
 	private static void toIntFunctionEx() {
@@ -37,7 +36,6 @@ public class PrimitiveFunctionExample {
 	private static void intToDoubleFunctionEx() {
 
 		IntToDoubleFunction getSquareRoot = Math::sqrt;
-
 		System.out.println(getSquareRoot.applyAsDouble(9));
 
 	}

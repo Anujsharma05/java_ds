@@ -2,7 +2,7 @@ package java_eight.bi_predicate_function_consumer;
 
 import java.util.function.BiPredicate;
 
-/*
+/**
  * BiPredicate<T, U>
  * 
  * boolean test(T t, U u)

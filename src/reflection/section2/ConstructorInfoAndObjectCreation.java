@@ -2,27 +2,38 @@ package reflection.section2;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.TypeVariable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * getDeclaredConstructors: return all constructors in current class only getConstructors: returns
- * only public constructors
+ * getDeclaredConstructors: return all constructors in current class only
+ * getConstructors: returns only public constructors along with super class
  */
 public class ConstructorInfoAndObjectCreation {
 
   public static void main(String[] args)
       throws InvocationTargetException, InstantiationException, IllegalAccessException {
 //        printConstructorData(Person.class);
+        createNewInstanceObject();
+  }
 
+  private static void createNewInstanceObject()
+      throws InvocationTargetException, InstantiationException, IllegalAccessException {
+
+    /**
+     * Create object without arguments
+     */
     Person person1 = createInstanceWithArguments(Person.class);
     System.out.println(person1);
 
+    /**
+     * Create object with arguments
+     */
     Address address = createInstanceWithArguments(Address.class, "Grand line", 60);
     Person person2 = createInstanceWithArguments(Person.class, "Zoro", 28, address);
     System.out.println(person2);
-
   }
 
   private static void printConstructorData(Class<?> input) {
@@ -36,7 +47,7 @@ public class ConstructorInfoAndObjectCreation {
       Class<?>[] parameterTypes = constructors[i].getParameterTypes();
 
       List<String> parameterTypeNames = Arrays.stream(parameterTypes)
-          .map(type -> type.getSimpleName())
+          .map(classType -> classType.getSimpleName())
           .collect(Collectors.toList());
 
       System.out.println(parameterTypeNames);

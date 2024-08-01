@@ -7,8 +7,8 @@ public class Main {
         int[] oneDimensionalArray = {1,2};
         double[][] twoDimensionalArray = {{2.2, 4.3}, {1.1, 4.2}};
 
-//        inspectArrayObject(twoDimensionalArray);
-        inspectArrayValues(twoDimensionalArray);
+        inspectArrayObject(twoDimensionalArray);
+//        inspectArrayValues(twoDimensionalArray);
     }
 
     /**

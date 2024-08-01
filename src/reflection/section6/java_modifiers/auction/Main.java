@@ -20,7 +20,8 @@ public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
 //        classModifiers();
 //        methodModifiers();
-        fieldModifiers();
+//        fieldModifiers();
+        runAuction();
     }
     public static void fieldModifiers() {
         printFieldModifiers(Auction.class.getDeclaredFields());

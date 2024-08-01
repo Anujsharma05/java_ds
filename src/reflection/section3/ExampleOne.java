@@ -4,10 +4,13 @@ import java.lang.reflect.Field;
 
 public class ExampleOne {
     public static void main(String[] args) throws IllegalAccessException, NoSuchFieldException {
-//        printDeclaredFieldsInfo(Movie.MovieStats.class);
-//        printDeclaredFieldsInfo(Category.class);
+
+        printFieldsInfo(Category.class);
+        printFieldsInfo(Movie.MovieStats.class);
 
         Movie movie = new Movie("Lord of the Rings", 2001, 12.99, true, Category.ADVENTURE);
+        Movie.MovieStats stats = movie.new MovieStats(3);
+        printDeclaredFieldsInfo(stats.getClass(), stats);
         printDeclaredFieldsInfo(movie.getClass(), movie);
 
         /**
@@ -16,6 +19,22 @@ public class ExampleOne {
         Field field = Movie.class.getField("MINIMUM_PRICE");
         System.out.println("Static field value: " + field.get(null));
     }
+
+    private static void printFieldsInfo(Class<?> clazz) {
+        Field[] fields = clazz.getDeclaredFields();
+
+        for(Field field: fields) {
+            System.out.println(String.format("Field name: %s, field type: %s", field.getName(), field.getType().getName()));
+
+            if(field.isEnumConstant()) {
+                System.out.println(String.format("Field: %s is enum constant value", field.getName()));
+            } else if(field.isSynthetic()) {
+                System.out.println(String.format("Field: %s is synthetic", field.getName()));
+            }
+            System.out.println();
+        }
+    }
+
     public static <T> void printDeclaredFieldsInfo(Class<? extends T> clazz, T instance) throws IllegalAccessException {
         Field[] fields = clazz.getDeclaredFields();
         for(Field field: fields) {

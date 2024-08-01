@@ -5,14 +5,16 @@ import java.util.function.IntPredicate;
 import java.util.function.LongPredicate;
 
 /**
- * 
- * boolean test(int i)
+ * Primitive variants saves performance
+ * by avoiding autoboxing and unboxing to wrapper class
  *
+ * boolean test(int i)
  */
 public class PrimitivePredicateExample {
 	public static void main(String argsp[]) {
 		intPredicateEx();
-
+		longPredicateEx();
+		doublePredicateEx();
 	}
 
 	static void intPredicateEx() {

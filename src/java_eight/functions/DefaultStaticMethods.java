@@ -4,7 +4,7 @@ import java.util.function.Function;
 import java.util.function.IntBinaryOperator;
 import java.util.function.UnaryOperator;
 
-/*
+/**
  * f1.andThen(f2) => perform f1 then perform f2
  * 
  * f1.compose(f2) => perform f2 then perform f1

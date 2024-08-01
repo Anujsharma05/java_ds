@@ -4,7 +4,7 @@ import java.util.function.Function;
 import java.util.function.IntUnaryOperator;
 import java.util.function.ToIntFunction;
 
-/*
+/**
  * Function is functional interface
  * Function is like predicate. But predicate can only
  * return boolean. Function can return anything

@@ -2,7 +2,7 @@ package java_eight.bi_predicate_function_consumer;
 
 import java.util.function.BiConsumer;
 
-/*
+/**
  * BiConsumer<T, U>
  * 
  * void accept(T t, U u)

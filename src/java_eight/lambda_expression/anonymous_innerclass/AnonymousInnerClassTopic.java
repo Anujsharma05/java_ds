@@ -1,13 +1,4 @@
-/**
- * 
- */
 package java_eight.lambda_expression.anonymous_innerclass;
-
-/**
- * @author anuj.sharma
- *
- * @date 11-Jun-2022
- */
 
 @FunctionalInterface
 interface MyInterface {
@@ -24,8 +15,11 @@ class MyConcreteClass {
 	}
 }
 
-//Lambda Function must require Functional Interface
-//ie. Concrete, Abstract Class extending anonymous class cannot be converted to lambda
+/**
+ * Lambda Function must require Functional Interface
+ * ie. Concrete, Abstract Class extending anonymous class cannot be converted to lambda
+ */
+
 public class AnonymousInnerClassTopic {
 	public static void main(String args[]) {
 		
