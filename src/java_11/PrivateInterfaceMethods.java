@@ -3,6 +3,11 @@ package java_11;
 interface One {
   default void methodOne() {
     System.out.println("method one");
+    hello();
+  }
+
+  private void hello() {
+    System.out.println("hello");
   }
 }
 

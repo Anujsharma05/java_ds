@@ -1,6 +1,5 @@
 package java_11;
 
-import oops.inheritance.person.Person;
 
 public class LocalVariableTypeInference {
 

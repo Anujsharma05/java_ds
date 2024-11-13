@@ -1,4 +1,4 @@
-package java_eight;
+package useful_concepts;
 
 import java.time.Duration;
 import java.time.Instant;

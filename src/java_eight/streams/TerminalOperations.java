@@ -13,12 +13,12 @@ public class TerminalOperations {
   public static void main(String[] args) {
 //    reduceWithIdentity();
 //    reduceWithoutIdentity();
-//    reduceWithBiFunction();
+    reduceWithBiFunction();
 //    collect();
 //    collectUsingCollectors();
 //    collectMap();
 //    groupingBy();
-    partioningBy();
+//    partioningBy();
   }
 
   /**
@@ -36,7 +36,7 @@ public class TerminalOperations {
   }
 
   /**
-   * It return Optional because there is no identity value,
+   * It returns Optional because there is no identity value,
    * so it is possible to get null as value
    */
   static void reduceWithoutIdentity() {

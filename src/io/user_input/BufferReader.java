@@ -1,4 +1,4 @@
-package user_input;
+package io.user_input;
 
 import java.io.BufferedReader;
 import java.io.IOException;
